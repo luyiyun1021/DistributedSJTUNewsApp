@@ -11,13 +11,13 @@ Note â€¢ You can choose to run the hap package on the simulator or the phone. â€
 
 - Main page: 
 
-  - ![image.png](https://s2.loli.net/2022/06/13/puLqg7HScPkYX2B.png)
+  - <img src="https://s2.loli.net/2022/06/13/DGBtJa5FmVEMn9P.png" height="300px" width="150px" >
 
   - Display classifiable list of SJTU news, Including five categories: life, student work, sports, employment, community. Each news will show the title and the title picture.
 
 - News Details page: 
 
-  - ![image.png](https://s2.loli.net/2022/06/13/BLMRz3aXQ9UodOE.png)
+  - <img src="https://s2.loli.net/2022/06/13/Vvf7CmKpzLYtTH2.png" height="300px" width="150px" >
 
   - After browsing the news, users can click "Back" to return to the main screen.
 
