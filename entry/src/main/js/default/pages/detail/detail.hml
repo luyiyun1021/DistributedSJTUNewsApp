@@ -1,0 +1,70 @@
+<!--
+ Copyright (c) 2021 Huawei Device Co., Ltd.
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+     http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ -->
+
+<div class="container">
+    <text class="text-reads" onclick="routeBack">返回</text>
+    <text class="text-title">{{ title }}</text>
+    <text class="text-reads">{{date}}    阅读: {{ reads }}   喜欢: {{ likes }}   收藏: {{ saved }}</text>
+    <image class="image" src="{{ imgUrl2 }}"></image>
+    <text class="text-content">
+        {{ content }}
+    </text>
+    <text class="text-reads">----评论区----\n</text>
+    <text class="text-reads">{{comment}}</text>
+    <!-- 详情页底部-->
+    <div class="bottom">
+<!--        <textarea class="textarea" placeholder="输入你的评论。"></textarea>-->
+        <text class="lian-text-change" onclick="onLian">一键三连</text>
+        <image class="image-bottom" src="/common/images/icon_message.png" onclick="onClickcomment"></image>
+        <image class="image-bottom" src="{{good}}" onclick="onClickgood"></image>
+        <image class="image-bottom" src="{{star}}" onclick="onClickstar"></image>
+        <image class="image-bottom" src="{{share}}" onclick="toShare"></image>
+    </div>
+
+
+    <dialog id="showDialog" class="select-device-dialog">
+        <div class="select-device-wrapper">
+            <text class="select-device-title">选择设备</text>
+            <list class="select-device-list">
+                <list-item class="select-device-item" for="{{ deviceList }}" id="list">
+                    <div>
+                        <text class="select-device-item-left">{{ $item.deviceName }}
+                        </text>
+                        <input class="select-device-item-right" type="checkbox" name="Device" value="{{$idx}}"
+                               @change="selectDevice({{$idx}})" checked="{{$item.checked}}">
+                        </input>
+                    </div>
+                </list-item>
+            </list>
+            <div class="choose-ok-or-not">
+                <text class="select-device-btn" @click="chooseCancel">取消</text>
+                <text class="select-device-btn" @click="chooseComform">确定</text>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="ratingDialog" class="dialog-main" @cancel="cancelrRatingDialog">
+        <div class="dialog-div">
+            <div class="dialog-div-rating">
+                <text class="comment-title">我要评论</text>
+                <input type="text" placeholder="输入你的评论。" @change="ratingReasonChange"></input>
+                <div class="choose-ok-or-not">
+                    <text class="select-device-btn" @click="cancelrRatingDialog">取消</text>
+                    <divider vertical="true" class="dialog-divider"></divider>
+                    <text class="select-device-btn" @click="confirmRatingInfo">确定</text>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+</div>

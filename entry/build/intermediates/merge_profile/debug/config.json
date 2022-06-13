@@ -1,0 +1,90 @@
+{
+    "app": {
+        "bundleName": "com.huawei.codelab",
+        "vendor": "huawei",
+        "apiVersion": {
+            "compatible": 7,
+            "target": 7,
+            "releaseType": "Beta2"
+        },
+        "version": {
+            "code": 1000000,
+            "name": "1.0.0"
+        }
+    },
+    "deviceConfig": {
+        "default": {
+            "debug": true
+        }
+    },
+    "module": {
+        "name": ".MyApplication",
+        "deviceType": [
+            "phone",
+            "tablet",
+            "tv",
+            "wearable"
+        ],
+        "distro": {
+            "deliveryWithInstall": true,
+            "moduleName": "entry",
+            "moduleType": "entry",
+            "installationFree": false
+        },
+        "abilities": [
+            {
+                "name": "com.huawei.codelab.MainAbility",
+                "description": "$string:mainability_description",
+                "icon": "$media:icon",
+                "label": "$string:NewsClient",
+                "type": "page",
+                "launchType": "standard",
+                "visible": true,
+                "skills": [
+                    {
+                        "actions": [
+                            "action.system.home"
+                        ],
+                        "entities": [
+                            "entity.system.home"
+                        ]
+                    }
+                ],
+                "homeAbility": true
+            }
+        ],
+        "js": [
+            {
+                "name": "default",
+                "pages": [
+                    "pages/index/index",
+                    "pages/detail/detail"
+                ],
+                "window": {
+                    "designWidth": 720,
+                    "autoDesignWidth": true
+                }
+            }
+        ],
+        "reqPermissions": [
+            {
+                "name": "ohos.permission.DISTRIBUTED_DATASYNC",
+                "reason": "$string:distributed_datasync_reason",
+                "usedScene": {
+                    "ability": [
+                        ".MainAbility"
+                    ],
+                    "when": "inuse"
+                }
+            },
+            {
+                "name": "com.huawei.permission.ACCESS_SERVICE_DM"
+            },
+            {
+                "name": "ohos.permission.INTERNET"
+            }
+        ],
+        "mainAbility": "com.huawei.codelab.MainAbility",
+        "package": "com.huawei.codelab"
+    }
+}
